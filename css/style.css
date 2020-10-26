@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*RESET*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}ol,ul{list-style:none}sup{vertical-align:text-top}sub{vertical-align:text-bottom}body{background-color:#fff;color:#333}article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block;padding:0;margin:0}body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small}table{font-size:inherit;font:100%}th{font-style:normal;font-weight:normal;text-align:left}code{font-family:monospace;*font-size:108%;line-height:100%}input,textarea,select,option,optgroup{font-family:arial,helvetica,clean,sans-serif;font-size:inherit;font-weight:inherit;font-style:inherit}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal}em{font-style:italic;font-weight:normal}strong{font-style:normal;font-weight:bold}.left{float:left}.right{float:right}.clear{clear:both}.clearabove{line-height:0;height:0;font-size:0;clear:both}.clearcontents{overflow:hidden;zoom:1;word-wrap:break-word}.relative{position:relative}.absolute{position:absolute}.none{display:none}.hidden{visibility:hidden}a{text-decoration:none}a:link{text-decoration:none}a:visited{text-decoration:none}a:hover{text-decoration:none}a:active{text-decoration:none}
+
+html {
+  background-color: #fff;
+}
+
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: bebas-neue-pro, sans-serif;
+  font-style: normal;
+  font-weight: 600;  
+  color: #2a2d35;
+}
+
+/********** Intro Loader **********/
+
+.intro-load {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #6f98d0;
+  background-color: #2a2d35;
+  z-index: 20000;
+  animation: load-slide .75s forwards;
+  animation-timing-function: cubic-bezier(.7, .3, 0, 1);
+  animation-delay: 1.7s;
+}
+  @keyframes load-slide{
+    0%   { transform: translateY(0); 
+    }
+    100% { transform: translateY(-100%); 
+    }
+  }
+
+.intro-logo-load {
+  width: 40vw;
+  animation: load-logo-slide .75s forwards;
+  animation-delay: .5s;
+  opacity: 0;
+}
+
+@keyframes load-logo-slide{
+  0%   { 
+    opacity: 0;
+    transform: translateY(50px); 
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+
+/********** Hero — Image **********/
+
+.hero-alpha {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../images/bg-alpha2.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 100;
+  animation: hero-zoom 3.5s forwards;
+  animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+  animation-delay: 1.5s;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  animation: hero-zoom 3.5s forwards;
+  animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+  animation-delay: 1.5s;
+}
+
+@keyframes hero-zoom{
+  0%   { 
+    transform: scale(1.175); 
+  }
+  100% { 
+    transform: scale(1); 
+  }
+}
+
+/********** Hero — Text **********/
+
+.hero-text {
+  align-self: center;
+  position: absolute;
+  top: 0;
+  transform: translateY(180%);
+  left: 0;
+  right:0;
+  margin: 0 auto;
+}
+@media screen and (min-width: 720px) {
+  .hero-text  {
+    top: 0;
+    transform: translateY(90%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero-text  {
+    top: 0;
+    transform: translateY(42%);
+  }
+}
+
+.welcome {
+  font-family: bebas-neue-pro, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 43px;
+  letter-spacing: 0;
+  font-size: 4vh;
+  text-align: center;
+  color: #fff;
+  animation: reveal 1.2s forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+h1 {
+  color: #fff;
+  font-family: bebas-neue-pro, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12vh;
+  text-align: center;
+  line-height: .75;
+  margin-bottom: 0;
+  letter-spacing: -.025em;
+  animation: reveal 1.2s forwards;
+  animation-delay: 2.2s;
+  opacity: 0;
+}
+@media screen and (min-width: 720px) {
+  h1 {
+    font-size: 20vh;
+  }
+}
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 30vh;
+  }
+}
+h1.delay-more {
+  animation-delay: 2.4s;
+}
+
+@keyframes reveal {
+  0%   { transform: translateY(30px); 
+         opacity: 0; 
+  }
+  100% { transform: translateY(0); 
+          opacity: 100%;
+  }
+}
+
+
